@@ -15,3 +15,32 @@ npm install -g webpack
 npm install
 npm run execute
 ```
+
+## CRUD API
+1) Create
+The component can create a review for a specific accommodation.
+
+```
+POST - /api/:accommodationid/reviews
+```
+2) Read 
+
+The component can retrieve reviews from the database for a specific accommodation.
+
+```
+GET - /api/:accommodationid/reviews
+```
+3) Update
+
+The component can update a review for a specific accommodation.
+```
+PATCH - /api/:accommodationid/reviews
+```
+4) Delete
+The component can delete a review for a specific accommodation.
+
+```
+DELETE - /api/:accommodationid/reviews
+```
+
+
