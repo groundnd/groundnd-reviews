@@ -65,3 +65,32 @@ const writeData = () => {
   write();
 };
 writeData();
+
+/*
+ 
+*/
+/*
+REVIEWS
+=============================================================PostgreSQL=====================================================|
+p key  | user_name|user_photo|review_text| accuracy |   comm   |  clean  |  loc    | check_in|  value  |review_date|abode_id|
+-------|----------|----------|-------------------------------------------------------------------------------------|--------|
+   1   |  lorem   |    url   |   lorem   |   INT    |   INT    |   INT   |   INT   |   INT   |   INT   |   date    |   1    |
+   2   |  lorem   |    url   |   lorem   |   INT    |   INT    |   INT   |   INT   |   INT   |   INT   |   date    |   1    |
+   3   |  lorem   |    url   |   lorem   |   INT    |   INT    |   INT   |   INT   |   INT   |   INT   |   date    |   1    |
+   4   |  lorem   |    url   |   lorem   |   INT    |   INT    |   INT   |   INT   |   INT   |   INT   |   date    |   1    |
+   5   |  lorem   |    url   |   lorem   |   INT    |   INT    |   INT   |   INT   |   INT   |   INT   |   date    |   1    |
+   6   |  lorem   |    url   |   lorem   |   INT    |   INT    |   INT   |   INT   |   INT   |   INT   |   date    |   2    |
+   7   |  lorem   |    url   |   lorem   |   INT    |   INT    |   INT   |   INT   |   INT   |   INT   |   date    |   2    |
+   8   |  lorem   |    url   |   lorem   |   INT    |   INT    |   INT   |   INT   |   INT   |   INT   |   date    |   2    |
+   9   |  lorem   |    url   |   lorem   |   INT    |   INT    |   INT   |   INT   |   INT   |   INT   |   date    |   2    |
+   10  |  lorem   |    url   |   lorem   |   INT    |   INT    |   INT   |   INT   |   INT   |   INT   |   date    |   2    |
+=============================================================================================================================
+ABODES
+ abode_id/PK| abodeName|
+------------|----------| 
+    1       |   lorem  | 
+    2       |   lorem  | 
+    3       |   lorem  | 
+    4       |   lorem  | 
+    5       |   lorem  | 
+*/
