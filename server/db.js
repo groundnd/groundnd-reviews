@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/abodely', { useNewUrlParser: true, useCreateIndex: true });
+const db = mongoose.connection;
 // localhost
 // 172.17.0.2
 
@@ -25,3 +26,4 @@ const reviewSchema = new mongoose.Schema({
 const Review = mongoose.model('Review', reviewSchema);
 
 module.exports.Review = Review;
+module.exports.db = db;
