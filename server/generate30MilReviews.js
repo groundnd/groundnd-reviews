@@ -2,8 +2,8 @@ const faker = require('faker');
 const fs = require('fs');
 
 const writeDataReviews = () => {
-  let stream = fs.createWriteStream('./dataReviews.csv');
-  let i = 50000000;
+  let stream = fs.createWriteStream('./dataReviews1.csv');
+  let i = 30000000;
 
   const write = () => {
     let ok = true;
@@ -53,7 +53,7 @@ writeDataReviews();
 /*
 REVIEWS 
 =============================================================PostgreSQL=====================================================|
-reviewID| user_name|user_photo|review_text| accuracy |   comm   |  clean  |  loc    | check_in|  value  |review_date|abode_id|
+reviewID| user_name|user_photo|review_text| accuracy|   comm   |  clean  |  loc    | check_in|  value  |review_date|abode_id|
 -------|----------|----------|-------------------------------------------------------------------------------------|--------|
    1   |  lorem   |    url   |   lorem   |   INT    |   INT    |   INT   |   INT   |   INT   |   INT   |   date    |  INT   |
    2   |  lorem   |    url   |   lorem   |   INT    |   INT    |   INT   |   INT   |   INT   |   INT   |   date    |  INT   |
