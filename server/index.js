@@ -17,7 +17,25 @@ app.get('/api/abodes/:abode_id', (req, res) => {
     if (err) {
       console.log('failed to find this listing', err);
     } else {
-      res.send(JSON.stringify(abodeInfo.rows));
+      let obj = {};
+      obj.abode_id = abodeId;
+      obj.reviews = [];
+
+      for (let i = 0; i < abodeInfo.rows.length; i += 1) {
+        const current = abodeInfo.rows[i]; //object 0
+        let obj1 = {};
+        obj1.user_name = current.username;
+        obj1.user_photo = current.userphoto;
+        obj1.review_text = current.reviewtext;
+        obj1.accuracy = current.accuracy;
+        obj1.communication = current.communication;
+        obj1.cleanliness = current.cleanliness;
+        obj1.location = current.location;
+        obj1.value = current.value;
+        obj1.review_date = current.reviewdate;
+        obj.reviews.push(obj1);
+      }
+      res.send(JSON.stringify(obj));
     }
   });
 });

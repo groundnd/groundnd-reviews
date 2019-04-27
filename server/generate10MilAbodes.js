@@ -3,21 +3,21 @@ const fs = require('fs');
 
 const writeData = () => {
   let stream = fs.createWriteStream('./dataAbodes.csv');
-  let i = 10000000;
+  let i = 10000001;
 
   const write = () => {
     let ok = true;
     do {
       if (i === 0) {
-        const abodeId = i;
-        const abodeName = faker.lorem.words();
-        const line = `${abodeId}|${abodeName}`;
+        const abodeid = i;
+        const abodename = faker.lorem.words();
+        const line = `${abodeid}|${abodename}`;
         stream.write(line);
         stream.end();
       } else {
-        const abodeId = i;
-        const abodeName = faker.lorem.words();
-        const line = `${abodeId}|${abodeName}`;
+        const abodeid = i;
+        const abodename = faker.lorem.words();
+        const line = `${abodeid}|${abodename}`;
         ok = stream.write(`${line} \n`);
       }
       i -= 1;

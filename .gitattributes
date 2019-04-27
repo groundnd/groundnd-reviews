@@ -1,0 +1,2 @@
+*.datareviews.cvs filter=lfs diff=lfs merge=lfs -text
+*server/dataAbodes.csv filter=lfs diff=lfs merge=lfs -text
