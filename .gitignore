@@ -1,6 +1,7 @@
 node_modules
 public/app.js
 coverage
-dataAbodes.cvs
-dataReviews1.cvs
-
+dataAbodes.csv
+dataReviews.csv
+dataAbodeId.csv
+dataReviews100.csv
