@@ -37,7 +37,9 @@
     }
   },
   "dependencies": {
+    "artillery": "^1.6.0-27",
     "axios": "^0.18.0",
+    "cassandra-driver": "^4.0.0",
     "compression": "^1.7.4",
     "css-loader": "^2.1.1",
     "dompurify": "^1.0.10",
@@ -47,8 +49,10 @@
     "moment": "^2.24.0",
     "mongoose": "^5.4.20",
     "morgan": "^1.9.0",
+    "newrelic": "^5.7.0",
     "npm": "^6.9.1-next.0",
     "path": "^0.12.7",
+    "pg": "^7.10.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "sinon": "^7.3.1"
