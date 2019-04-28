@@ -1,7 +1,8 @@
 node_modules
 public/app.js
 coverage
-dataAbodes.csv
-dataReviews.csv
-dataAbodeId.csv
-dataReviews100.csv
+server/dataAbodes.csv
+server/dataReviews.csv
+server/dataAbodeId.csv
+server/dataReviews100.csv
+newrelic.js
