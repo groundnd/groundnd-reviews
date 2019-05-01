@@ -43,7 +43,7 @@ class App extends React.Component {
     }
     axios.get(`/api/abodes/${requestedAbode}`)
       .then((listingInfo) => {
-        console.log(listingInfo.data);
+        console.log('this is the listing data from the client req', listingInfo.data);
         this.setState({
           allReviews: listingInfo.data.reviews,
           reviews: listingInfo.data.reviews,

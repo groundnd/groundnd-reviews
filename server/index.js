@@ -13,10 +13,12 @@ app.use('/abodes/:abode_id', express.static('public'));
 
 app.get('/api/abodes/:abode_id', (req, res) => {
   const abodeId = req.params.abode_id;
+  console.log('woooo get req from client');
   db.query(`SELECT * FROM reviews WHERE abodeid=${abodeId};`, '', (err, abodeInfo) => {
     if (err) {
       console.log('failed to find this listing', err);
     } else {
+
       let obj = {};
       obj.abode_id = abodeId;
       obj.reviews = [];
