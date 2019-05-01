@@ -37,17 +37,18 @@ class App extends React.Component {
   componentDidMount() {
     const { reviewsPerPage } = this.state;
     const pathNum = Number(window.location.pathname.split('/')[1]);
-    let requestedAbode = Math.ceil(Math.random() * 100);
-    if (pathNum > 0 && pathNum < 101) {
+    let requestedAbode = Math.ceil(Math.random() * 10000000);
+    if (pathNum > 0 && pathNum < 10000001) {
       requestedAbode = pathNum;
     }
-    axios.get(`/abodes/${requestedAbode}/reviews`)
+    axios.get(`/api/abodes/${requestedAbode}`)
       .then((listingInfo) => {
+        console.log('this is the listing data from the client req', listingInfo.data);
         this.setState({
           allReviews: listingInfo.data.reviews,
           reviews: listingInfo.data.reviews,
           foundAverage: false,
-          maxPage: Math.ceil(listingInfo.data.reviews.length / reviewsPerPage),
+          maxPage: Math.ceil(listingInfo.data.length / reviewsPerPage),
         });
       })
       .catch(() => {
