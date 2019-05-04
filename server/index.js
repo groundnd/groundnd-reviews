@@ -3,6 +3,9 @@ const express = require('express');
 const path = require('path');
 const { Review } = require('./db.js');
 const compression = require('compression');
+const redis = require('redis');
+const client = redis.createClient();
+
 const db = require('./db.1');
 
 const app = express();
@@ -11,18 +14,19 @@ const port = 3002;
 app.use(compression());
 app.use('/abodes/:abode_id', express.static('public'));
 
-app.get('/api/abodes/:abode_id', (req, res) => {
+app.get('/loaderio-57c70e642def572347e45d8b1a626873', (req, res) => {
+  res.send('/loaderio-57c70e642def572347e45d8b1a626873');
+});
+
+const getReviews = (req, res, isbn) => {
   const abodeId = req.params.abode_id;
-  console.log('woooo get req from client');
   db.query(`SELECT * FROM reviews WHERE abodeid=${abodeId};`, '', (err, abodeInfo) => {
     if (err) {
       console.log('failed to find this listing', err);
     } else {
-
       let obj = {};
       obj.abode_id = abodeId;
       obj.reviews = [];
-
       for (let i = 0; i < abodeInfo.rows.length; i += 1) {
         const current = abodeInfo.rows[i]; //object 0
         let obj1 = {};
@@ -37,13 +41,23 @@ app.get('/api/abodes/:abode_id', (req, res) => {
         obj1.review_date = current.reviewdate;
         obj.reviews.push(obj1);
       }
+      client.setex(isbn, 3600, JSON.stringify(obj));
       res.send(JSON.stringify(obj));
     }
   });
-});
+};
 
-// app.get('/*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../public/index.html'));
-// });
+const getCache = (req, res) => {
+  let isbn = req.params.abode_id;
+  client.get(isbn, (err, result) => {
+    if (result) {
+      res.send(result);
+    } else {
+      getReviews(req, res, isbn);
+    }
+  });
+};
+
+app.get('/api/abodes/:abode_id', getCache);
 
 app.listen(port, () => { console.log(`Listening on port ${port}`); });

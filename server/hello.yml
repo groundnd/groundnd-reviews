@@ -2,7 +2,7 @@ config:
   target: 'http://localhost:3002'
   phases:
     - duration: 200
-      arrivalRate: 500
+      arrivalRate: 50
   payload:
     path: "dataAbodeId.csv"
     fields:
@@ -13,4 +13,4 @@ config:
 scenarios:
   - flow:
     - get:
-        url: "/abodes/{{abodeid}}"
+        url: "/api/abodes/{{abodeid}}"
