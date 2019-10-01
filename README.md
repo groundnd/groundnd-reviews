@@ -1,4 +1,4 @@
-# reviews_module
+# Reviews Module
 Displays reviews for any given abode and allows users to search within reviews
 
 ## Related Projects:
