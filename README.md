@@ -1,5 +1,5 @@
 # Reviews Module
-Displays reviews for any given abode and allows users to search within reviews
+Reviews component for an online marketplace and hospitality service application.
 
 ## Related Projects:
 - https://github.com/abode-ly/carousel_module
